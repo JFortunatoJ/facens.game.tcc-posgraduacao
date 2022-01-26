@@ -51,6 +51,7 @@ namespace Project.Scripts
         private SO_Terrain _terrain;
         private SlotModel _data;
         private double _remainingMiningTime;
+        private readonly Vector3 _minerPosition = new Vector3(-0.004001617f, 0.35f, -0.3410001f);
 
         public void Init(SlotModel data)
         {
@@ -64,7 +65,7 @@ namespace Project.Scripts
             
             _miner = miner;
             _miner.transform.SetParent(transform);
-            _miner.transform.localPosition = Vector3.zero;
+            _miner.transform.localPosition = _minerPosition;
 
             uiSlot.Coins = miner.Data.coinsPerMining;
 
