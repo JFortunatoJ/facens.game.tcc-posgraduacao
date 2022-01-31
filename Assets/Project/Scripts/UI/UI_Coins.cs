@@ -1,4 +1,3 @@
-using System;
 using Blazewing.DataEvent;
 using TMPro;
 using UnityEngine;

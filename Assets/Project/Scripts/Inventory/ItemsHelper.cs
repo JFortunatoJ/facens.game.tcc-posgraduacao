@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Project.Scripts.Inventory
 {
+    /// <summary>
+    /// Classe responsável por armazenar todos os itens.
+    /// </summary>
     public class ItemsHelper : MonoBehaviour
     {
         private static ItemsHelper _instance;

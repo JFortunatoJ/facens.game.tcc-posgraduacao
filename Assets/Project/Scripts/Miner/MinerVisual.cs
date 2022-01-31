@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace Project.Scripts.Miner
 {
+    /// <summary>
+    /// Componente responsável por controlar o visual do minerador.
+    /// </summary>
     public class MinerVisual : MonoBehaviour
     {
+        //Meshes do minerador
         [SerializeField] private SkinnedMeshRenderer maleBodyMeshRenderer;
         [SerializeField] private SkinnedMeshRenderer femaleBodyMeshRenderer;
         [Space] [SerializeField] private MeshRenderer hunterHatMeshRenderer;

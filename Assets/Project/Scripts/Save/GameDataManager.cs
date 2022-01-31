@@ -6,12 +6,19 @@ using UnityEngine;
 
 namespace Project.Scripts.Save
 {
+    
+    /// <summary>
+    /// Classe reponsável por controlar os dados do jogador.
+    /// </summary>
     public class GameDataManager : SingletonBehaviour<GameDataManager>
     {
+        //Chave identificadora dos dados do jogador.
         private const string PROFILE_SAVE_KEY = "PROFILE";
         
+        //Dados do jogador serializados para serem exibidos no inspector da Unity
         [SerializeField] private PlayerProfile m_profile;
 
+        //Moedas do jogador
         public int Coins
         {
             get => Profile.coins;
@@ -22,6 +29,7 @@ namespace Project.Scripts.Save
             }
         }
         
+        //Encapsulamento dos dados do jogador.
         public PlayerProfile Profile
         {
             get
@@ -33,14 +41,6 @@ namespace Project.Scripts.Save
 
                 return m_profile;
             }
-        }
-        
-        public void SaveProfile()
-        {
-            FileManager.SaveFile(m_profile, PROFILE_SAVE_KEY);
-            string value = JsonController.Serialize(m_profile);
-
-            //TODO Subir na API
         }
         
         private void SetupProfileData()
@@ -58,6 +58,13 @@ namespace Project.Scripts.Save
             Coins = m_profile.coins;
         }
         
+        //Salva os dados do jogador localmente
+        public void SaveProfile()
+        {
+            FileManager.SaveFile(m_profile, PROFILE_SAVE_KEY);
+        }
+
+         
         private void LoadDefaultProfile()
         {
             m_profile = new PlayerProfile("Player");
