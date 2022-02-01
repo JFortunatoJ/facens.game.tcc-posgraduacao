@@ -43,6 +43,9 @@ namespace Project.Scripts.Save
             }
         }
         
+        /// <summary>
+        /// Carrega os dados salvos localmente ou cria novos com valores padrão.
+        /// </summary>
         private void SetupProfileData()
         {
             m_profile = new PlayerProfile();
